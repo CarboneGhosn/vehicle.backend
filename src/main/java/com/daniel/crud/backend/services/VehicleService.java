@@ -28,7 +28,7 @@ public class VehicleService {
     }
     public VehicleDto getVehicle(Long id) {
         Vehicle vehicle = vehicleRepository.findById(id)
-                .orElseThrow(() -> new AppException("Vehicle not found", HttpStatus.NOT_FOUND));
+                .orElseThrow(() -> new AppException("Veículo não encontrado", HttpStatus.NOT_FOUND));
         return vehicleMapper.toVehicleDto(vehicle);
 
     }
@@ -43,7 +43,7 @@ public class VehicleService {
 
     public VehicleDto deleteVehicle(Long id) {
         Vehicle vehicle = vehicleRepository.findById(id)
-                .orElseThrow(() -> new AppException("Vehicle not found", HttpStatus.NOT_FOUND));
+                .orElseThrow(() -> new AppException("Veículo não encontrado", HttpStatus.NOT_FOUND));
         vehicleRepository.deleteById(id);
 
         return vehicleMapper.toVehicleDto(vehicle);
@@ -52,7 +52,7 @@ public class VehicleService {
 
     public VehicleDto updateVehicle(Long id, VehicleDto vehicleDto) {
         Vehicle vehicle = vehicleRepository.findById(id)
-                .orElseThrow(() -> new AppException("Vehicle not found", HttpStatus.NOT_FOUND));
+                .orElseThrow(() -> new AppException("Veículo não encontrado", HttpStatus.NOT_FOUND));
 
         vehicleMapper.updateVehicle(vehicle, vehicleMapper.toVehicle(vehicleDto));
 
