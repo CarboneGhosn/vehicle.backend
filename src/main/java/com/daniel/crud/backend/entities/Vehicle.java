@@ -55,19 +55,5 @@ public class Vehicle {
     public void setColor(String color) {
     }
 
-    public String getBrand() {
-        return null;
-    }
 
-    public String getModel() {
-        return null;
-    }
-
-    public int getYear() {
-        return 0;
-    }
-
-    public boolean getColor() {
-        return false;
-    }
 }
